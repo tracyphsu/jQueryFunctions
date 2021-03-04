@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Doge Shop</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gray{
+            color: gray;
+        }
+
+        .header h3{
+            margin-right: 150px;
+        }
+
+        .icon{
+            width: 50px;
+        }
+
+        .container{
+            background-color: turquoise;
+            width: 970px;
+            display: flex;
+        }
+        .navbar{
+            width: 100px;
+            list-style: none;
+            vertical-align: top;
+        }
+
+        li.active{
+            background: purple;
+        }
+
+        .navbar-content a{
+            color: white;
+        }
+
+        .content{
+            margin: 30px;
+        }
+        
+        .horizontal{
+            width: 300px;
+        }
+
+        .vertical{
+            width: 200px;
+        }
+
+        .bottom{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .icon{
+            margin-right: 150px;
+        }
+    
+        
+
+
+    </style>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(couponcode){
+            alert('10% off your first order! Use code: HOORAY10');
+
+            $('.header h3').hide();
+            $('.header').hover(function(){{
+                    $('.header h3').fadeIn().delay(1000).fadeOut();
+                }
+            })
+
+            $('.navbar li').hover(function(){
+                $(this)
+                .toggleClass("active")
+                .next()
+                .stop(true, true)
+            })
+
+            $('.hide').click(function(){
+            $(".navbar-content").hide();
+        })
+            $('.show').click(function(){
+            $(".navbar-content").show();
+        })
+
+        $('.header h1').click(function(){
+                $('.header h1').after("SO CUTE!! ")
+            })
+
+            $('.content h1').addClass("gray");
+
+            $(".contest").hide();
+        $(".contest-btn").click(function(){
+            if ($(".contest").first().is( ":hidden") ){
+                $( ".contest" ).slideDown( "slow" );
+            } else{
+                $(".contest").hide();
+            }
+        })
+        $(".winnerpic").attr("width", "100");
+        $(".winnerpic").hide();
+        $(".winner").click(function(){
+            if ($(".winnerpic").first().is( ":hidden") ){
+                $( ".winnerpic" ).toggle( "slow" );
+                $(".winner").append("<b>: Lexy!</b>");
+            } else{
+                $(".winnerpic").hide();
+            }
+        })
+
+        $(".winnerpic").hover(function(){
+            $(".winnerpic").slideUp();
+        })
+        
+        $( ".footer p" ).html( "Language" );
+        $(".footer select").val("English");
+
+        $(".bottom h6").text("Follow Us on Instagram!").hover(function(){
+            $(".bottom button").slideToggle("slow");
+        })
+    
+        $(".icon").before("@shiba.lexy.bae")
+    
+        })
+
+
+    </script>
+</head>
+<body>
+    <div class="header">
+    <h1>The DOGE Shop</h1>
+    <h3>FREE SHIPPING ON ORDERS OVER $100</h3>
+    </div>
+    <div class ="container">
+        <div class="navbar">
+            <ul class="navbar-content">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="shop"><a href="#">Shop</a></li>
+            </ul>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <button class="contest-btn">Contests</button>
+            <ul class="contest">
+                <li>Who Wore It Best</li>
+                <li>Best Costume</li>
+                <li>Cutest</li>
+            </ul>
+            <button class="winner">See the Winner!!</button>
+            <img class="winnerpic" src="images/winner.JPG">
+
+        </div>
+        <div class="content">
+            <h1 class="title">Pet Outfits & Beds</h1>
+            <img class="vertical" src="images/cny.JPG">
+            <img class="vertical" src="images/hawaii.JPG">
+            <img class="vertical" src="images/niners.JPG">
+            <img class="horizontal" src="images/lexy.JPG">
+            <img class="horizontal" src="images/bae.JPG">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="footer">
+            <p></p>
+            <select class="language">
+                <option>French</option>
+                <option>English</option>
+                <option>Chinese</option>
+            </select>
+        </div>
+        <div class="instagram">
+            <h6></h6>
+            <button>Check Us Out!</button>
+        </div>
+        <img class="icon" src="images/icon.png">
+    </div>
+    </div>
+</body>
+</html>
